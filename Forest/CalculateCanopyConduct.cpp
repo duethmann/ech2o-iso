@@ -78,6 +78,17 @@ int Forest::CalculateCanopyConduct(const Basin &bas, const Atmosphere &atm,
 	f_psi = Calculate_gs_lwp(lwp, f_lwp_high, f_lwp_low);
 
 	gs = gsmax * lai * shelter_factor * f_light * f_temp * f_vpd * f_psi;
+	
+	if (((r == 25) && (c == 6)) && (j == 1)) {
+	//if (((r == 4) && (c == 13)) && (j == 0)) {	
+		printf("\ngsmax ():  %.6f \t", gsmax);
+		printf("\nlai ():  %.2f \t", lai);
+		printf("\nf_light ():  %.2f \t", f_light);
+		printf("\nf_temp ():  %.2f \t", f_temp);
+		printf("\nf_vpd ():  %.2f \t", f_vpd);
+		printf("\nf_psi ():  %.2f \t", f_psi);
+		printf("\ngs ():  %.6f \n", gs);
+	}
 
 	_species[j]._CanopyConductance->matrix[r][c] =
 			gs < gsmin ?

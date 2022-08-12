@@ -60,7 +60,7 @@ void Tracking::MixingV_snow(Atmosphere &atm, Basin &bsn, Control &ctrl,
   // snowpack mixed, snowmelt has snowfall signature
   // includes checks for where there is no previous snowpack
   if(h > RNDOFFERR and snow_in > dh){
-    cout << "Snow exists and snowin is greater than melt" << endl;
+    // cout << "Snow exists and snowin is greater than melt" << endl;
     h_eff = snow_in - dh;
 
     if(ctrl.sw_2H){
@@ -100,9 +100,9 @@ void Tracking::MixingV_snow(Atmosphere &atm, Basin &bsn, Control &ctrl,
     } //close age
 
   } else {
-    cout << "Snow exists but snowin is less than melt" << endl;
-    cout << "Melt    " << dh << " snowin: " << snow_in << " h: " << h << endl; 
-    cout << "d2Hpack " << _d2Hsnowpack->matrix[r][c] << " atm: " << atm.getd2Hprecip()->matrix[r][c] << endl; 
+    //cout << "Snow exists but snowin is less than melt" << endl;
+    //cout << "Melt    " << dh << " snowin: " << snow_in << " h: " << h << endl; 
+    //cout << "d2Hpack " << _d2Hsnowpack->matrix[r][c] << " atm: " << atm.getd2Hprecip()->matrix[r][c] << endl; 
     // Case where there is more snowmelt than snowfall: 
     // no mixing in snowpack, snowmelt has mixed signature
     h_eff = dh - snow_in;
@@ -111,7 +111,7 @@ void Tracking::MixingV_snow(Atmosphere &atm, Basin &bsn, Control &ctrl,
       // Snowpack: no change (all recent snow has melted)
       // Snowmelt: mix of snowpack and throughfall
       _d2Hsnowmelt->matrix[r][c] = InputMix(h_eff, _d2Hsnowpack->matrix[r][c],snow_in, atm.getd2Hprecip()->matrix[r][c]);
-      cout << "d2Hmelt " << _d2Hsnowmelt->matrix[r][c] << endl;
+    //  cout << "d2Hmelt " << _d2Hsnowmelt->matrix[r][c] << endl;
     }    
     if(ctrl.sw_18O){
       // Snowpack: no change (all recent snow has melted)

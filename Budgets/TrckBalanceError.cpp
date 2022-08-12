@@ -133,7 +133,7 @@ void Budget::TrckBalanceError(const Control *ctrl)
 	  outputs_d18O = evaporationS_d18O + evaporationC_d18O + evaporationI_d18O + transpiration_d18O + ovlndflow_d18O + gwtrflow_d18O + leakage_d18O;
 	  
 	  Snew_d18O = canopy_d18O + snowpack_d18O + ponding_d18O + chan_d18O + soilL1_d18O + soilL2_d18O + soilL3_d18O + grndwater_d18O;
-
+	  /*
 	  cout << "Input d18O: " << inputs_d18O << endl;	  
   	  cout << "Sold d18O--- " << "Snowpack(d18O):" << initsnowpack_d18O << " | Ponding(d18O):" << initponding_d18O <<endl; 
 	  cout << "Sold d18O--- " << "Layer1(d18O)  :" << initL1_d18O       << " | Layer2(d18O) :" << initL2_d18O << endl;
@@ -149,7 +149,8 @@ void Budget::TrckBalanceError(const Control *ctrl)
 	  cout << "Snew d18O--- " << "Ponding(d18O) :" << ponding_d18O  << " | Layer1(d18O) :" << soilL1_d18O << endl;
 	  cout << "Snew d18O--- " << "Layer2(d18O)  :" << soilL2_d18O   << " | Layer3(d18O) :" << soilL3_d18O << " | GW(d18O)     :" << grndwater_d18O << endl;	  
 	  cout << "Sold d18O--- " << "Chan(d18O)  :" << chan_d18O << endl << endl;
-
+	  */
+	  
 	  if(inputs+Sold>0) 
 	    MBErr_d18O = 100/(inputs_d18O+Sold_d18O)*(inputs_d18O-outputs_d18O + Sold_d18O-Snew_d18O);
 	  else 
@@ -177,7 +178,7 @@ void Budget::TrckBalanceError(const Control *ctrl)
 	  
 	  Snew_Age = canopy_Age + snowpack_Age + ponding_Age + chan_Age + 
 	    soilL1_Age + soilL2_Age + soilL3_Age + grndwater_Age;
-	  
+	  /*
 	  cout << "Input Age: " << inputs_Age << endl;	  
 	  cout << "Sold_Age   " << Sold_Age << endl;
   	  cout << "Sold Age--- " << "Snowpack(Age):" << initsnowpack_Age << " | Ponding(Age):" << initponding_Age <<endl; 
@@ -194,7 +195,8 @@ void Budget::TrckBalanceError(const Control *ctrl)
 	  cout << "Snew Age--- " << "Ponding(Age) :" << ponding_Age  << " | Layer1(Age) :" << soilL1_Age << endl;
 	  cout << "Snew Age--- " << "Layer2(Age)  :" << soilL2_Age   << " | Layer3(Age) :" << soilL3_Age << " | GW(Age)     :" << grndwater_Age << endl;	  
 	  cout << "Sold Age--- " << "Chan(Age)  :" << chan_Age << endl << endl;
-
+	  */
+	  
 	  if(inputs_Age+Sold_Age > RNDOFFERR) 
 	    MBErr_Age = 100/(inputs_Age+Sold_Age)*(inputs_Age-outputs_Age+Sold_Age-Snew_Age);
 	  else 

@@ -328,26 +328,28 @@ UINT4 Forest::SolveCanopyEnergyBalance(Basin &bas, Atmosphere &atm, Control &ctr
 	  << r << " col: " << c << " closure err: " << norm(deltax, 2)
 	  << endl;
 
-      if (x[2] < atm.getTemperature()->matrix[r][c]) { //if the calculated canopy temperature is lower than air temperature make it air temperature
-	LET = LatHeatCanopy(bas, atm, leafRH, ra_t, x[2], r, c);
-	H = SensHeatCanopy(atm, ra, x[2], r, c);
-	netR_a = NetRadCanopy(atm, x[2], emissivity,	albedo, BeerK, LAI, r, c);
-	if(abs(evap_a)<RNDOFFERR){
-	  LE = 0.0;
-	} else {
-	  LEmax = evap_a * (rho_w * lambda); 
-	  LE = LatHeatCanopy(bas, atm, leavesurfRH, ra, x[2], r, c) < LEmax ? LEmax : LatHeatCanopy(bas, atm, leavesurfRH, ra, x[2], r, c);
+	// if (x[2] < atm.getTemperature()->matrix[r][c]) { //if the calculated canopy temperature is lower than air temperature make it air temperature
+	  // LET = LatHeatCanopy(bas, atm, leafRH, ra_t, x[2], r, c);
+	  // H = SensHeatCanopy(atm, ra, x[2], r, c);
+	  // netR_a = NetRadCanopy(atm, x[2], emissivity,	albedo, BeerK, LAI, r, c);
+		// if(abs(evap_a)<RNDOFFERR){
+		  // LE = 0.0;
+		// } else {
+		  // LEmax = evap_a * (rho_w * lambda); 
+		  // LE = LatHeatCanopy(bas, atm, leavesurfRH, ra, x[2], r, c) < LEmax ? LEmax : LatHeatCanopy(bas, atm, leavesurfRH, ra, x[2], r, c);
 
-	} //if
-	x[2] = atm.getTemperature()->matrix[r][c];
-      } else {
-	netR_a = NetRadCanopy(atm, x[2], emissivity,	albedo, BeerK, LAI, r, c);
-	H = SensHeatCanopy(atm, ra, x[2], r, c);
-      }
+		// } //if
+	   // x[2] = atm.getTemperature()->matrix[r][c];
+	// } else {
+	  // netR_a = NetRadCanopy(atm, x[2], emissivity,	albedo, BeerK, LAI, r, c);
+	  // H = SensHeatCanopy(atm, ra, x[2], r, c);
+	// }
+		
       // ---- SAVE THE FINAL VALUES FOR THE CANOPY BALANCE
       _species[s]._Temp_c->matrix[r][c] = x[2];
       CalculateCanopyConduct(bas, atm, ctrl, x[1], dgcdfgspsi, s, r, c);       //Updates canopy conductance with final values of soil potential
-
+	  netR_a = NetRadCanopy(atm, x[2], emissivity,	albedo, BeerK, LAI, r, c);
+	  H = SensHeatCanopy(atm, ra, x[2], r, c);
     }
 
     evap_a = std::max<REAL8>(0.0,std::min<REAL8>(-evap_a, fabs(-LE / (rho_w * lambda)))); //swap sign since outgoing evaporation is negative and we accumulate it as positive. Also checks for negative evap

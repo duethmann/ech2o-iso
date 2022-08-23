@@ -265,6 +265,7 @@ int Control::ReadConfigFile(string confilename /*= "config.ini"*/)
     Rep_Leaf_Area_Index = Config.read<bool>("Report_Leaf_Area_Index");
     Rep_Stand_Age = Config.read<bool>("Report_Stand_Age");
     Rep_Canopy_Conductance = Config.read<bool>("Report_Canopy_Conductance");
+	Rep_gc_factor_soil_moisture = Config.read<bool>("Report_gc_factor_soil_moisture");
     Rep_GPP = Config.read<bool>("Report_GPP");
     Rep_NPP = Config.read<bool>("Report_NPP");
     Rep_Basal_Area = Config.read<bool>("Report_Basal_Area");
@@ -280,7 +281,8 @@ int Control::ReadConfigFile(string confilename /*= "config.ini"*/)
     Rep_Transpiration = Config.read<bool>("Report_Transpiration");
     Rep_Einterception = Config.read<bool>("Report_Einterception");
     Rep_Esoil = Config.read<bool>("Report_Esoil");
-
+	Rep_TSkin_species = Config.read<bool>("Report_TSkin_species");
+		
     // Internal fluxes
     Rep_GWtoChn = Config.read<bool>("Report_GW_to_Channel");
     Rep_SrftoChn = Config.read<bool>("Report_Surface_to_Channel");
@@ -373,6 +375,7 @@ int Control::ReadConfigFile(string confilename /*= "config.ini"*/)
     RepTs_RootFrac2Species = Config.read<bool>("Ts_RootFracL2_species");
     RepTs_Leaf_Area_Index = Config.read<bool>("Ts_Leaf_Area_Index");
     RepTs_Canopy_Conductance = Config.read<bool>("Ts_Canopy_Conductance");
+	RepTs_gc_factor_soil_moisture = Config.read<bool>("Ts_gc_factor_soil_moisture"); 
     RepTs_GPP = Config.read<bool>("Ts_GPP");
     RepTs_NPP = Config.read<bool>("Ts_NPP");
     RepTs_Basal_Area = Config.read<bool>("Ts_Basal_Area");
@@ -388,6 +391,7 @@ int Control::ReadConfigFile(string confilename /*= "config.ini"*/)
     RepTs_Transpiration = Config.read<bool>("Ts_Transpiration");
     RepTs_Einterception = Config.read<bool>("Ts_Einterception");
     RepTs_Esoil = Config.read<bool>("Ts_Esoil");
+    RepTs_TSkin_species = Config.read<bool>("Ts_TSkin_species");
 
     // Internal vertical fluxes
     RepTs_GWtoChn = Config.read<bool>("Ts_GW_to_Channel");

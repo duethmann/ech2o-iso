@@ -294,7 +294,8 @@ void GenerateConfigTemplate(const char *fn){
     ofOut << "Report_Leaf_Area_Index = 0 " << endl;
     ofOut << "Report_Stand_Age = 0 " << endl;
     ofOut << "Report_Canopy_Conductance = 0 " << endl;
-    ofOut << "Report_GPP = 0 " << endl;
+    ofOut << "Report_gc_factor_soil_moisture = 0 " << endl;
+	ofOut << "Report_GPP = 0 " << endl;
     ofOut << "Report_NPP = 0 " << endl;
     ofOut << "Report_Basal_Area = 0 " << endl;
     ofOut << "Report_Tree_Height = 0 " << endl;
@@ -308,7 +309,8 @@ void GenerateConfigTemplate(const char *fn){
     ofOut << "Report_species_ET = 0 " << endl;
     ofOut << "Report_Transpiration = 0 " << endl;
     ofOut << "Report_Einterception = 0 " << endl;
-    ofOut << "Report_Esoil = 0 " << endl << endl;
+    ofOut << "Report_Esoil = 0 " << endl; 
+    ofOut << "Report_TSkin_species = 0 " << endl << endl;
 
     ofOut << "Report_GW_to_Channel = 0 " << endl;
     ofOut << "Report_Surface_to_Channel = 0 " << endl;
@@ -404,6 +406,7 @@ void GenerateConfigTemplate(const char *fn){
     ofOut << "Ts_Leaf_Area_Index = 1 " << endl;
     ofOut << "Ts_Stand_Age = 0 " << endl;
     ofOut << "Ts_Canopy_Conductance = 1 " << endl;
+	ofOut << "Ts_gc_factor_soil_moisture = 1 " << endl;
     ofOut << "Ts_GPP = 0 " << endl;
     ofOut << "Ts_NPP = 1 " << endl;
     ofOut << "Ts_Basal_Area = 0 " << endl;
@@ -418,7 +421,8 @@ void GenerateConfigTemplate(const char *fn){
     ofOut << "Ts_species_ET = 0 " << endl;
     ofOut << "Ts_Transpiration = 0 " << endl;
     ofOut << "Ts_Einterception = 0 " << endl;
-    ofOut << "Ts_Esoil = 0 " << endl << endl;
+    ofOut << "Ts_Esoils = 0 " << endl;
+    ofOut << "Ts_TSkin_species = 0 " << endl << endl;
 
     ofOut << "Ts_GW_to_Channel = 0 " << endl;
     ofOut << "Ts_Surface_to_Channel = 0 " << endl;

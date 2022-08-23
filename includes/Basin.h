@@ -683,6 +683,7 @@ class Basin {
     for (unsigned int j = 0; j < _vSortedGrid.cells.size(); j++) {
       r = _vSortedGrid.cells[j].row;
       c = _vSortedGrid.cells[j].col;
+      //_SoilSatDeficit->matrix[r][c] = (_porosityL1->matrix[r][c] - _soilmoist1->matrix[r][c]);
       _SoilSatDeficit->matrix[r][c] = 1 - ((_soilmoist1->matrix[r][c] - _theta_rL1->matrix[r][c])
 	   / (_porosityL1->matrix[r][c] - _theta_rL1->matrix[r][c]));
     }
@@ -1001,6 +1002,8 @@ class Basin {
   grid *getStandAge(UINT4 n) const;
 
   grid *getCanopyCond(UINT4 n) const;
+  
+  grid *get_gc_f_psi(UINT4 n) const;
 
   grid *getGPP(UINT4 n) const;
 
@@ -1031,7 +1034,9 @@ class Basin {
   grid *getEinterception(UINT4 n) const;
 
   grid *getEsoil(UINT4 n) const;
-
+   
+  grid *getTSkinSpecies(UINT4 n) const;
+	
   grid *getLeafWaterPotential(UINT4 n) const;
 
   grid *getRootFrac1(UINT4 n) const;

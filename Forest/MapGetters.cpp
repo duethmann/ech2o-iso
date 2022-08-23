@@ -54,6 +54,10 @@ grid *Basin::getCanopyCond(UINT4 n) const {
 	return fForest->getCanopyConductSpeciesMap(n);
 }
 
+grid *Basin::get_gc_f_psi(UINT4 n) const {
+	return fForest->get_gc_f_psi_SpeciesMap(n);
+}
+
 grid *Basin::getGPP(UINT4 n) const {
 	return fForest->getGPPSpeciesMap(n);
 }
@@ -109,9 +113,15 @@ grid *Basin::getTranspiration(UINT4 n) const {
 grid *Basin::getEinterception(UINT4 n) const {
 	return fForest->getEinterceptionSpeciesMap(n);
 }
+
 grid *Basin::getEsoil(UINT4 n) const {
 	return fForest->getEsoilSpeciesMap(n);
 }
+
+grid *Basin::getTSkinSpecies(UINT4 n) const {
+	return fForest->getTSkinSpeciesMap(n);
+}
+
 
 grid *Basin::getLeafWaterPotential(UINT4 n) const {
 	return fForest->getLeafWaterPotSpeciesMap(n);

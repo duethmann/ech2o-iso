@@ -44,7 +44,8 @@ int Report::ReportTimeSeries(const grid *input, string filename, float timestep)
 		fout << length + 1 << "\n";
 		fout << "ReportTime" << "\n";
 		for (UINT4 i = 0; i < length; i++)
-			fout << "point# " << mask.cells[i].dir << "\n";
+			fout << "point# " << mask.cells[i].dir << ", row " << mask.cells[i].row << ", col " << mask.cells[i].col << "\n";
+			// fout << "point# " << mask.cells[i].dir << "\n";
 	}
 
 	  fout << timestep << "\t";

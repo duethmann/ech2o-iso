@@ -76,6 +76,7 @@ int Forest::CalculateCanopyConduct(const Basin &bas, const Atmosphere &atm,
 	// EDIT: it is left here but the parameter value can be set as very small to effectively have no dependence
 	f_vpd = Calculate_gs_vpd(vpd, f_vpd_coeff);
 	f_psi = Calculate_gs_lwp(lwp, f_lwp_high, f_lwp_low);
+	_species[j]._CanopyCond_fpsi->matrix[r][c] = f_psi
 
 	gs = gsmax * lai * shelter_factor * f_light * f_temp * f_vpd * f_psi;
 	

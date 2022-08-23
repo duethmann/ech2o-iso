@@ -46,6 +46,8 @@ Grove::~Grove(){
 		delete _AGE;
 	if(_CanopyConductance)
 		delete _CanopyConductance;
+	if(_CanopyCond_fpsi)
+		delete _CanopyCond_fpsi;
 	if(_GPP)
 		delete _GPP;
 	if(_NPP)
@@ -82,6 +84,8 @@ Grove::~Grove(){
 		delete _Einterception;
 	if(_Esoil)
 			delete _Esoil;
+	if(_TSkin_species)
+			delete _TSkin_species;
 	if(_LeafWatPot)
 		delete _LeafWatPot;
 	if(_rootfrac1)

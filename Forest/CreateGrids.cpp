@@ -40,6 +40,7 @@ int Grove::CreateGrids(grid *base){
 		_grassLAI_d = new grid (*base);
 		_AGE = new grid (*base);
 		_CanopyConductance = new grid (*base);
+		_CanopyCond_fpsi = new grid (*base);
 		_GPP = new grid (*base);
 		_NPP = new grid (*base);
 		_BasalArea = new grid (*base);
@@ -58,6 +59,7 @@ int Grove::CreateGrids(grid *base){
 		_Einterception = new grid (*base);
 		_Transpiration = new grid (*base);
 		_Esoil = new grid (*base);
+		_TSkin_species = new grid (*base);
 		_LeafWatPot = new grid (*base);
 		_rootfrac1 = new grid (*base);
 		_rootfrac2 = new grid (*base);

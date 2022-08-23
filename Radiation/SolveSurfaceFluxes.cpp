@@ -250,7 +250,8 @@ int Basin::SolveSurfaceFluxes(Atmosphere &atm, Control &ctrl, Tracking &trck) {
 	    // individual component of Esoil and ET (below vegetation only, de-weighted!)
 	    if(s != nsp -1){
 	      fForest->setEsoilSpecies(s, r, c, evap/p);
-	      etc = fForest->getEvapoTransp(s, r, c);
+	      fForest->setTSkinSpecies(s, r, c, Ts);
+		  etc = fForest->getEvapoTransp(s, r, c);
 	      fForest->setETSpecies(s, r, c, etc + evap/p);
 	    }
 	    

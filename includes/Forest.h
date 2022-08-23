@@ -130,6 +130,7 @@ class Forest {
     Grove *spe = &_species[n]; //ACHTUNG ACHTUNG! MEMORY LEAK??!?!?!
     return spe->_CanopyConductance->matrix[row][col];
   }
+  
   REAL8 getTreeHeight(UINT4 n, UINT4 row, UINT4 col) const {
     Grove *spe = &_species[n]; //ACHTUNG ACHTUNG! MEMORY LEAK??!?!?!
     return spe->_Height->matrix[row][col];
@@ -205,6 +206,9 @@ class Forest {
   REAL8 getEsoil(UINT4 n, UINT4 row, UINT4 col) const {
     return _species[n]._Esoil->matrix[row][col];
   }
+  REAL8 getTSkinSpecies(UINT4 n, UINT4 row, UINT4 col) const {
+    return _species[n]._TSkin_species->matrix[row][col];
+  }
   REAL8 getLeafWaterPotential(UINT4 n, UINT4 row, UINT4 col) const {
     return _species[n]._LeafWatPot->matrix[row][col];
   }
@@ -234,6 +238,10 @@ class Forest {
 
   grid *getCanopyConductSpeciesMap(UINT4 n) const {
     return _species[n]._CanopyConductance;
+  }
+  
+  grid *get_gc_f_psi_SpeciesMap(UINT4 n) const {
+    return _species[n]._CanopyCond_fpsi;
   }
 
   grid *getGPPSpeciesMap(UINT4 n) const {
@@ -291,6 +299,9 @@ class Forest {
   grid *getEsoilSpeciesMap(UINT4 n) const {
     return _species[n]._Esoil;
   }
+  grid *getTSkinSpeciesMap(UINT4 n) const {
+    return _species[n]._TSkin_species;
+  }
   grid *getLeafWaterPotSpeciesMap(UINT4 n) const {
     return _species[n]._LeafWatPot;
   }
@@ -298,6 +309,9 @@ class Forest {
   // setters
   void setEsoilSpecies(UINT4 n, UINT4 row, UINT4 col, REAL8 value) {
     _species[n]._Esoil->matrix[row][col] = value;
+  }
+  void setTSkinSpecies(UINT4 n, UINT4 row, UINT4 col, REAL8 value) {
+    _species[n]._TSkin_species->matrix[row][col] = value;
   }
   void setETSpecies(UINT4 n, UINT4 row, UINT4 col, REAL8 value) {
     _species[n]._ET->matrix[row][col] = value;

@@ -39,6 +39,7 @@ Grove::Grove(){
 	_grassLAI_d = NULL;
 	_AGE = NULL;
 	_CanopyConductance = NULL;
+	_CanopyCond_fpsi = NULL;
 	_GPP = NULL;
 	_NPP = NULL;
 	_BasalArea = NULL;
@@ -57,6 +58,7 @@ Grove::Grove(){
 	_Einterception = NULL;
 	_Transpiration = NULL;
 	_Esoil = NULL;
+	_TSkin_species = NULL;
 	_LeafWatPot = NULL;
 	_rootfrac1 = NULL;
 	_rootfrac2 = NULL;

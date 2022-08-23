@@ -412,6 +412,12 @@ if (oControl->Rep_TranspiL3acc)
       WriteMapSeries(oBasin->getCanopyCond(i), name.str() , oControl->current_ts_count);
       name.str("");
     }
+	
+    if (oControl->Rep_gc_factor_soil_moisture) {
+      name << "gc_f_psi" << i << "_";
+      WriteMapSeries(oBasin->getCanopyCond(i), name.str() , oControl->current_ts_count);
+      name.str("");
+    }
 
     if (oControl->Rep_GPP) {
       name << "gpp" << i << "_";
@@ -498,6 +504,11 @@ if (oControl->Rep_TranspiL3acc)
     if (oControl->Rep_Esoil) {
       name << "Es" << i << "_";
       WriteMapSeries(oBasin->getEsoil(i), name.str() , oControl->current_ts_count);
+      name.str("");
+    }
+    if (oControl->Rep_TSkin_species) {
+      name << "TSkin_species" << i << "_";
+      WriteMapSeries(oBasin->getTSkinSpecies(i), name.str() , oControl->current_ts_count);
       name.str("");
     }
 
@@ -1585,6 +1596,14 @@ int Report2Ts(){
       oReport->ReportTimeSeries(oBasin->getCanopyCond(i), name.str() , oControl->current_ts_count);
       name.str("");
     }
+	
+    if (oControl->RepTs_gc_factor_soil_moisture) {
+      name << oControl->path_ResultsFolder << "gc_f_psi" << i << ".tab";
+      if(oControl->GetTimeStep() <= oControl->report_times)
+	oReport->RenameFile(name.str());
+      oReport->ReportTimeSeries(oBasin->get_gc_f_psi(i), name.str() , oControl->current_ts_count);
+      name.str("");
+    }
 
     if (oControl->RepTs_GPP) {
       name << oControl->path_ResultsFolder << "GPP_" << i << ".tab";
@@ -1699,6 +1718,13 @@ int Report2Ts(){
       if(oControl->GetTimeStep() <= oControl->report_times)
 	oReport->RenameFile(name.str());
       oReport->ReportTimeSeries(oBasin->getEsoil(i), name.str() , oControl->current_ts_count);
+      name.str("");
+    }
+    if (oControl->RepTs_TSkin_species) {
+      name << oControl->path_ResultsFolder << "TSkin_species_" << i << ".tab";
+      if(oControl->GetTimeStep() <= oControl->report_times)
+	oReport->RenameFile(name.str());
+      oReport->ReportTimeSeries(oBasin->getTSkinSpecies(i), name.str() , oControl->current_ts_count);
       name.str("");
     }
 

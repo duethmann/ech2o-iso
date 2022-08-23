@@ -244,6 +244,7 @@ struct Control{
   bool Rep_Leaf_Area_Index;
   bool Rep_Stand_Age;
   bool Rep_Canopy_Conductance;
+  bool Rep_gc_factor_soil_moisture;
   bool Rep_GPP;
   bool Rep_NPP;
   bool Rep_Basal_Area;
@@ -259,6 +260,7 @@ struct Control{
   bool Rep_Transpiration;
   bool Rep_Einterception;
   bool Rep_Esoil;
+  bool Rep_TSkin_species;
 
   bool Rep_Water_Temperature;
   bool Rep_ChanEvap;
@@ -334,6 +336,7 @@ struct Control{
   bool RepTs_RootFrac2Species;
   bool RepTs_Leaf_Area_Index;
   bool RepTs_Canopy_Conductance;
+  bool RepTs_gc_factor_soil_moisture;
   bool RepTs_GPP;
   bool RepTs_NPP;
   bool RepTs_Basal_Area;
@@ -349,7 +352,8 @@ struct Control{
   bool RepTs_Transpiration;
   bool RepTs_Einterception;
   bool RepTs_Esoil;
-
+  bool RepTs_TSkin_species;
+  
   bool RepTs_Water_Temperature;
   bool RepTs_ChanEvap;
 

@@ -89,6 +89,7 @@ struct Grove {
   grid *_grassLAI_d;//Leaf area index of dry grass
   grid *_AGE; //stand age in years
   grid *_CanopyConductance;//canopy conductance in m s-1
+  grid *_CanopyCond_fpsi;//canopy conductance efficiency factor related to soil moisture
   grid *_GPP; //gross primary production in gCm-2
   grid *_NPP; //net primary production in gCm-2
   grid *_BasalArea; //Average stem cross-sectional area (m2)
@@ -107,6 +108,7 @@ struct Grove {
   grid *_Einterception; //evaporation if interception component ms-1
   grid *_Transpiration; //transpiration component ms-1
   grid *_Esoil; // soil evaporation component m.s-1
+  grid *_TSkin_species; // Soil surface temperature 
   grid *_LeafWatPot; // leaf water potential (positive m of head)
   grid *_rootfrac1; // root fraction in first layer
   grid *_rootfrac2; // root fraction in second layer

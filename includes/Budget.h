@@ -59,6 +59,10 @@ struct Budget {
   double rootzone; //m3
   //double gravwater; //m3
   double grndwater; //m3
+  double Ts0; //°C
+  double Ts1; //°C
+  double Ts2; //°C
+  double Ts3; //°C
   
   //water inputs
   double precipitation;
@@ -88,8 +92,7 @@ struct Budget {
   double AccountFluxes(const vectCells *timeseries, const Basin *b);
   double AccountStorages(const grid *map, const Basin *b);
   double AccountStorages(const grid *map1, const grid *map2, const Basin *b);
-  double AccountRelArea(const grid *map, const Basin *b);
-  
+  double AccountRelArea(const grid *map, const Basin *b);  
   void TotalPrecipitation(const grid* map, const Atmosphere *b);
   void TotalEvaporation(const grid* map, const Basin *b);
   void TotalEvaporationS(const grid* map, const Basin *b);
@@ -109,6 +112,10 @@ struct Budget {
 			//const grid *GravWater,
 			const grid *GrndWater,
 			const grid *ProotL1, const grid *ProotL2, const grid *ProotL3,
+			const grid *CanopyTemp0, const grid *CanopyTemp1,const grid *CanopyTemp2,const grid *CanopyTemp3,
+			const grid *Tskin0,      const grid *Tskin1,     const grid *Tskin2,     const grid *Tskin3,
+			const grid *LAI0,        const grid *LAI1,       const grid *LAI2,       const grid *LAI3,
+			const grid *VegetFrac0,  const grid *VegetFrac1, const grid *VegetFrac2, const grid *VegetFrac3,
 			const Basin *b);
   void TotalSaturationArea(const grid* map, const Basin*b);
   void TotalGWtoChn(const grid* map, const Basin*b);
@@ -116,7 +123,10 @@ struct Budget {
   void TotalRecharge(const grid* map, const Basin*b);
 
   void MassBalanceError();
+  
+  double CalcBasinAve_Ts_eff_by_lc(const grid *CanopyTemp, const grid *Tskin, const grid *LAI, const grid *VegetFrac, const Basin *b); 
 
+	
   // Tracking --------------------------------------------------------------------------
   double MBErr_d2H, MBErr_d18O, MBErr_Age;
   

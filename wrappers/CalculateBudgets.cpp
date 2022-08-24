@@ -55,6 +55,22 @@ int CalculateBudgets(){
 			oBasin->getProotzoneL1(),
 			oBasin->getProotzoneL2(),
 			oBasin->getProotzoneL3(),
+			oBasin->getCanopyTemp(0),
+			oBasin->getCanopyTemp(1),
+			oBasin->getCanopyTemp(2),
+			oBasin->getCanopyTemp(3),
+			oBasin->getTSkinSpecies(0),
+			oBasin->getTSkinSpecies(1),
+			oBasin->getTSkinSpecies(2),
+			oBasin->getTSkinSpecies(3),
+			oBasin->getLAI(0),
+			oBasin->getLAI(1),
+			oBasin->getLAI(2),
+			oBasin->getLAI(3),
+			oBasin->getVegetFrac(0),
+			oBasin->getVegetFrac(1),
+			oBasin->getVegetFrac(2),
+			oBasin->getVegetFrac(3),
 			oBasin);
   oBudget->TotalSrftoChn(oBasin->getFluxSrftoChn(), oBasin);
   oBudget->TotalGWtoChn(oBasin->getFluxGWtoChn(), oBasin);

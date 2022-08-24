@@ -42,6 +42,22 @@ void Budget::TotalStorage( const grid *Canopy,
 			   const grid *ProotzoneL1,
 			   const grid *ProotzoneL2,
 			   const grid *ProotzoneL3,
+			   const grid *CanopyTemp0,
+			   const grid *CanopyTemp1,
+			   const grid *CanopyTemp2,
+			   const grid *CanopyTemp3,
+			   const grid *Tskin0,
+			   const grid *Tskin1,
+			   const grid *Tskin2,
+			   const grid *Tskin3,
+			   const grid *LAI0,
+			   const grid *LAI1,
+			   const grid *LAI2,
+			   const grid *LAI3,
+			   const grid *VegetFrac0,
+			   const grid *VegetFrac1,
+			   const grid *VegetFrac2,
+			   const grid *VegetFrac3,
 			   const Basin *b)
 {
 	canopy = AccountStorages(Canopy, b);
@@ -60,6 +76,10 @@ void Budget::TotalStorage( const grid *Canopy,
 	rootzone = AccountStorages(SoilL1, ProotzoneL1, b) +
 	  AccountStorages(SoilL2, ProotzoneL2, b) +
 	  AccountStorages(SoilL3, ProotzoneL3, b) ;
+	Ts0 = CalcBasinAve_Ts_eff_by_lc(CanopyTemp0, Tskin0, LAI0, VegetFrac0, b);   
+	Ts1 = CalcBasinAve_Ts_eff_by_lc(CanopyTemp1, Tskin1, LAI1, VegetFrac1, b);
+	Ts2 = CalcBasinAve_Ts_eff_by_lc(CanopyTemp2, Tskin2, LAI2, VegetFrac2, b);
+	Ts3 = CalcBasinAve_Ts_eff_by_lc(CanopyTemp3, Tskin3, LAI3, VegetFrac3, b);
 }
 
 void Budget::TotalStorage_d2H( const grid *Canopy, const grid *Canopy_d2H,

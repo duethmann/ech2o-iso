@@ -73,6 +73,38 @@ double Budget::AccountStorages(const grid *map1, const grid *map2, const Basin *
   return result;
 }
 
+// Calculate basin average effective land surface temperature by land cover
+double Budget::CalcBasinAve_Ts_eff_by_lc(const grid *CanopyTemp, const grid *Tskin, const grid *LAI, const grid *VegetFrac, const Basin *b)
+{
+  
+  UINT4 length = b->getSortedGrid().cells.size();
+  UINT4 r, c;
+  REAL8 numer = 0;
+  REAL8 denom = 0;
+  REAL8 result = 0;
+  REAL8 fc = 0;
+  
+#pragma omp parallel default(shared) private(r,c)
+  {
+    
+#pragma omp for reduction (+:numer, denom)
+    for (UINT4 i = 0; i< length; i++){
+      
+      r = b->getSortedGrid().cells[i].row;
+      c = b->getSortedGrid().cells[i].col;
+	  
+	  fc = (1-exp(-0.5 * LAI->matrix[r][c]));
+      numer += VegetFrac->matrix[r][c] * powl( (((1-fc) * powl(Tskin->matrix[r][c], 4)) + (fc * powl(CanopyTemp->matrix[r][c],4))), 0.25 );
+      denom += VegetFrac->matrix[r][c];
+    
+    }
+  }
+  result = numer / denom;
+  
+  return result;
+}
+
+
 
 // --- Tracking ------------------------------------------------------------------------
 

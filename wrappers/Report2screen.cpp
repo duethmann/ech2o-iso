@@ -172,6 +172,11 @@ int Report2Screen(){
       //printf("Age Mass Balance Error (%): %e \n", oBudget->MBErr_Age);
       ofSummary << "\t" << oBudget->MBErr_Age ;
     }
+	
+    ofSummary << "\t" << oBudget->Ts0 << "\t";
+	ofSummary << oBudget->Ts1 << "\t";
+	ofSummary << oBudget->Ts2 << "\t";
+	ofSummary << oBudget->Ts3;// << "\t";
   
   ofSummary << "\n";
 

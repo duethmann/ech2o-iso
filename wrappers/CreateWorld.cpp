@@ -95,6 +95,10 @@ int CreateWorld(char* argv[]){
     ofSummary << "\t18O_MBE";
   if(oControl->sw_trck and oControl->sw_Age)
     ofSummary << "\tAge_MBE";
+  ofSummary << "\tTs_0";
+  ofSummary << "\tTs_1";
+  ofSummary << "\tTs_2";
+  ofSummary << "\tTs_3";
   ofSummary << "\n";
 
   // == d2H Summary ==========================================================

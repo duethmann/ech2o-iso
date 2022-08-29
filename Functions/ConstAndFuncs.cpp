@@ -162,8 +162,8 @@ extern double Calculate_gs_vpd(const double &vpd, const double &Coeff){
 extern double Calculate_gs_lwp(const double &lwp, const double &lwp_max, const double &lwp_min){
 
 
-	return std::max<double>(0, std::min<double>(1, (lwp_min - lwp)/(lwp_min - lwp_max)));
-	//return 1 / (1 + powl(lwp/lwp_min, lwp_max));
+	//return std::max<double>(0, std::min<double>(1, (lwp_min - lwp)/(lwp_min - lwp_max)));
+	return 1 / (1 + powl(lwp/lwp_min, lwp_max));
 
 }
 

@@ -1598,7 +1598,7 @@ int Report2Ts(){
     }
 	
     if (oControl->RepTs_gc_factor_soil_moisture) {
-      name << oControl->path_ResultsFolder << "gc_f_psi" << i << ".tab";
+      name << oControl->path_ResultsFolder << "gc_f_psi_" << i << ".tab";
       if(oControl->GetTimeStep() <= oControl->report_times)
 	oReport->RenameFile(name.str());
       oReport->ReportTimeSeries(oBasin->get_gc_f_psi(i), name.str() , oControl->current_ts_count);

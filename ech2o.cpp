@@ -71,8 +71,9 @@ int main(int argc, char* argv[]) {
       // Report maps (only from a certain time step, e.g. to avoid spinup map reporting)
       if (oControl->current_t_step >= oControl->reportMap_start) { 
 	reportMap_time += oControl->dt;
-	if (reportMap_time >= oControl->reportMap_times) { //if report time overdue
-	  Report2Maps(); //report results
+	// if (reportMap_time >= oControl->reportMap_times) { //if report time overdue
+      if ( (oControl->current_ts_count == 1) || (oControl->current_ts_count == 2) || (oControl->current_ts_count == 943) || (oControl->current_ts_count == 959) || (oControl->current_ts_count == 966)) { //if report time overdue
+	Report2Maps(); //report results
 	  reportMap_time = 0; //reset the counter
 	}
       }

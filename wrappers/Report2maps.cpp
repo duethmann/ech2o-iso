@@ -123,6 +123,8 @@ int Report2Maps(){
     WriteMapSeries(oBasin->getSoilTemp(), "Ts", oControl->current_ts_count);
   if (oControl->Rep_Skin_Temperature)
     WriteMapSeries(oBasin->getSkinTemp(), "Tskin", oControl->current_ts_count);
+  if (oControl->Rep_LST_eff)
+    WriteMapSeries(oBasin->getLST_eff(), "LSTeff", oControl->current_ts_count);
 
   if(oControl->sw_chan_evap){
     if (oControl->Rep_Water_Temperature)
@@ -866,6 +868,13 @@ int Report2Ts(){
 			      oControl->current_ts_count);
   }
 
+  if (oControl->RepTs_LST_eff){
+    if(oControl->GetTimeStep() <= oControl->report_times)
+      oReport->RenameFile(oControl->path_ResultsFolder + "LSTeff.tab");
+    oReport->ReportTimeSeries(oBasin->getLST_eff(),
+			      oControl->path_ResultsFolder + "LSTeff.tab",
+			      oControl->current_ts_count);
+  }
 
 
   if(oControl->sw_chan_evap){

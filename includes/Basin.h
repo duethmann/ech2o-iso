@@ -157,6 +157,7 @@ class Basin {
   grid *_snwheat; //snow heat flux Wm-2
   grid *_Temp_s; //temperature of the surface in dg C
   grid *_Temp_s_old; //temperature of the surface in dg C in the previous time step
+  grid* _LST_eff; //effective land surface temperature for comparison with remotely sensed surface temperatures (dg C)
 
   grid *_Disch_old;// streamflow out of each channel cell at the beginning of hte time step (m3 s-1)
   grid *_Disch_upstreamBC; //upstream boundary condition (m3s-1)
@@ -437,6 +438,10 @@ class Basin {
 
   grid *getSkinTemp() const {
     return _Temp_s;
+  }
+
+  grid *getLST_eff() const {
+    return _LST_eff;
   }
 
   grid *getCanopyStorage() const {

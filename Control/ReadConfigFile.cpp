@@ -246,6 +246,7 @@ int Control::ReadConfigFile(string confilename /*= "config.ini"*/)
     Rep_Snow_Heat = Config.read<bool>("Report_Snow_Heat");
     Rep_Soil_Temperature = Config.read<bool>("Report_Soil_Temperature");
     Rep_Skin_Temperature = Config.read<bool>("Report_Skin_Temperature");
+    Rep_LST_eff = Config.read<bool>("Report_LST_eff");
     if(sw_chan_evap){
       Rep_Water_Temperature = Config.read<bool>("Report_Water_Temperature");
       Rep_ChanEvap = Config.read<bool>("Report_ChannelE");      
@@ -355,6 +356,7 @@ int Control::ReadConfigFile(string confilename /*= "config.ini"*/)
     RepTs_Snow_Heat = Config.read<bool>("Ts_Snow_Heat");
     RepTs_Soil_Temperature = Config.read<bool>("Ts_Soil_Temperature");
     RepTs_Skin_Temperature = Config.read<bool>("Ts_Skin_Temperature");
+    RepTs_LST_eff = Config.read<bool>("Ts_LST_eff");
 
     if(sw_chan_evap){
       RepTs_Water_Temperature = Config.read<bool>("Ts_Water_Temperature");

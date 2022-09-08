@@ -65,7 +65,6 @@ Basin::Basin(Control &ctrl)
       _vSortedGrid = Basin::SortGridLDD();
 
       printf("Sorting done. Saving serialized sorted grid object for subsequent runs...\n");
-
       saveSortedGrid(_vSortedGrid, (ctrl.path_BasinFolder + ctrl.fn_dem + ".serialized.svf").c_str());
     }
 
@@ -172,6 +171,7 @@ Basin::Basin(Control &ctrl)
     _grndheat = new grid(*_DEM);
     _snwheat = new grid(*_DEM);
     _Temp_s = new grid(*_DEM);
+    _LST_eff = new grid(*_DEM);
     //_Temp_s_old = new grid(*_DEM);
     _CanopyStorage = new grid(*_DEM);
     //_rootfrac1 = new grid(*_DEM);

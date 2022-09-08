@@ -275,6 +275,7 @@ void GenerateConfigTemplate(const char *fn){
     ofOut << "Report_Snow_Heat = 0 " << endl;
     ofOut << "Report_Soil_Temperature = 0 " << endl;
     ofOut << "Report_Skin_Temperature = 0 " << endl;
+    ofOut << "Report_LST_eff = 0 " << endl;
     ofOut << "Report_Water_Temperature = 0 " << endl << endl;
 
 
@@ -388,6 +389,7 @@ void GenerateConfigTemplate(const char *fn){
     ofOut << "Ts_Snow_Heat = 0 " << endl;
     ofOut << "Ts_Soil_Temperature = 0 " << endl;
     ofOut << "Ts_Skin_Temperature = 0 " << endl;
+    ofOut << "Ts_LST_eff = 0 " << endl;
     ofOut << "Ts_Water_Temperature = 0 " << endl << endl ;
 
     ofOut << "Ts_Total_ET = 1 " << endl;

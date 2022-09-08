@@ -189,6 +189,7 @@ struct Control{
   bool Rep_Snow_Heat;
   bool Rep_Soil_Temperature;
   bool Rep_Skin_Temperature;
+  bool Rep_LST_eff;
   
   bool Rep_GWtoChn;
   bool Rep_SrftoChn;
@@ -302,6 +303,7 @@ struct Control{
   bool RepTs_Snow_Heat;
   bool RepTs_Soil_Temperature;
   bool RepTs_Skin_Temperature;
+  bool RepTs_LST_eff;
 
   bool RepTs_GWtoChn;
   bool RepTs_SrftoChn;

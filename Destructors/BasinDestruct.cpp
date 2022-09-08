@@ -56,6 +56,8 @@ Basin::~Basin(){
     delete _snwheat;
   if(_Temp_s)
     delete _Temp_s;
+  if(_LST_eff)
+    delete _LST_eff;
   if(_Temp_s_old)
     delete _Temp_s_old;
   if(_albedo)

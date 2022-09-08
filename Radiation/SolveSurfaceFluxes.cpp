@@ -79,6 +79,7 @@ int Basin::SolveSurfaceFluxes(Atmosphere &atm, Control &ctrl, Tracking &trck) {
   
   UINT4 nsp;
   REAL8 p;//fraction of species s
+  REAL8 fv;//fraction of vegetation estimated from LAI for calculating LST_eff
 
   //needed in the water routing routines
   _dailyOvlndOutput.cells.clear();
@@ -118,6 +119,7 @@ int Basin::SolveSurfaceFluxes(Atmosphere &atm, Control &ctrl, Tracking &trck) {
   }
   // Set EvapS to zero before looping over baresoil/understory
   _EvaporationS_all->reset();
+  _LST_eff->reset();
 
   if(ctrl.sw_trck)
     trck.OutletVals(ctrl, 0, 0, 0);
@@ -247,6 +249,10 @@ int Basin::SolveSurfaceFluxes(Atmosphere &atm, Control &ctrl, Tracking &trck) {
 	    
 	    _Evaporation->matrix[r][c] += evap; //evaporation at t=t+1 (weighted by p)
 	    _EvaporationS_all->matrix[r][c] += evap; //soil evaporation at t=t+1 (weighted by p)
+
+        fv = (1 - exp(-0.5 * LAI));
+        _LST_eff->matrix[r][c] += p* powl((((1 - fv) * powl(Ts, 4)) + (fv * powl(Temp_can, 4))), 0.25);
+
 	    // individual component of Esoil and ET (below vegetation only, de-weighted!)
 	    if(s != nsp -1){
 	      fForest->setEsoilSpecies(s, r, c, evap/p);

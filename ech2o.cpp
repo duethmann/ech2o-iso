@@ -55,7 +55,7 @@ int main(int argc, char* argv[]) {
 
       //cout << "\nstart time step " << oControl->current_ts_count << "\n";
 
-      SolveTimeStep();
+	  SolveTimeStep();
 
       CalculateBudgets();
 
@@ -72,9 +72,9 @@ int main(int argc, char* argv[]) {
       if (oControl->current_t_step >= oControl->reportMap_start) { 
 	reportMap_time += oControl->dt;
 	// if (reportMap_time >= oControl->reportMap_times) { //if report time overdue
-      if ( (oControl->current_ts_count == 1) || (oControl->current_ts_count == 2) || (oControl->current_ts_count == 943) || (oControl->current_ts_count == 959) || (oControl->current_ts_count == 966)) { //if report time overdue
-	Report2Maps(); //report results
-	  reportMap_time = 0; //reset the counter
+    if ( (oControl->current_ts_count == 886) || (oControl->current_ts_count == 895) || (oControl->current_ts_count == 918) || (oControl->current_ts_count == 950) || (oControl->current_ts_count == 1207) || (oControl->current_ts_count == 1215) || (oControl->current_ts_count == 1222) || (oControl->current_ts_count == 1223) || (oControl->current_ts_count == 1255) || (oControl->current_ts_count == 1270) || (oControl->current_ts_count == 1271) || (oControl->current_ts_count == 1327) || (oControl->current_ts_count == 1334) || (oControl->current_ts_count == 1335) || (oControl->current_ts_count == 1351) || (oControl->current_ts_count == 1366) || (oControl->current_ts_count == 1599) || (oControl->current_ts_count == 1631) || (oControl->current_ts_count == 1702) || (oControl->current_ts_count == 1703) || (oControl->current_ts_count == 1926) || (oControl->current_ts_count == 1927) || (oControl->current_ts_count == 1935) || (oControl->current_ts_count == 1951) || (oControl->current_ts_count == 1959) || (oControl->current_ts_count == 1967) || (oControl->current_ts_count == 1975) || (oControl->current_ts_count == 1983) || (oControl->current_ts_count == 2023) || (oControl->current_ts_count == 2038) || (oControl->current_ts_count == 2087) || (oControl->current_ts_count == 2287) || (oControl->current_ts_count == 2303) || (oControl->current_ts_count == 2311) || (oControl->current_ts_count == 2367) || (oControl->current_ts_count == 2455) || (oControl->current_ts_count == 2655) || (oControl->current_ts_count == 2663) || (oControl->current_ts_count == 2711) || (oControl->current_ts_count == 2775) || (oControl->current_ts_count == 2815)){
+	   Report2Maps(); //report results
+	   reportMap_time = 0; //reset the counter
 	}
       }
 

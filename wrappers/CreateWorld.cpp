@@ -99,6 +99,10 @@ int CreateWorld(char* argv[]){
   ofSummary << "\tTs_1";
   ofSummary << "\tTs_2";
   ofSummary << "\tTs_3";
+  ofSummary << "\tFpsi_0";
+  ofSummary << "\tFpsi_1";
+  ofSummary << "\tFpsi_2";
+  ofSummary << "\tFpsi_3";
   ofSummary << "\n";
 
   // == d2H Summary ==========================================================

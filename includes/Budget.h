@@ -63,6 +63,10 @@ struct Budget {
   double Ts1; //°C
   double Ts2; //°C
   double Ts3; //°C
+  double Fpsi0_out; // -
+  double Fpsi1_out; // -
+  double Fpsi2_out; // -
+  double Fpsi3_out; // -
   
   //water inputs
   double precipitation;
@@ -116,6 +120,7 @@ struct Budget {
 			const grid *Tskin0,      const grid *Tskin1,     const grid *Tskin2,     const grid *Tskin3,
 			const grid *LAI0,        const grid *LAI1,       const grid *LAI2,       const grid *LAI3,
 			const grid *VegetFrac0,  const grid *VegetFrac1, const grid *VegetFrac2, const grid *VegetFrac3,
+            const grid* Fpsi0, const grid* Fpsi1, const grid* Fpsi2, const grid* Fpsi3,
 			const Basin *b);
   void TotalSaturationArea(const grid* map, const Basin*b);
   void TotalGWtoChn(const grid* map, const Basin*b);

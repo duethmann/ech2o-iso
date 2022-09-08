@@ -58,6 +58,10 @@ void Budget::TotalStorage( const grid *Canopy,
 			   const grid *VegetFrac1,
 			   const grid *VegetFrac2,
 			   const grid *VegetFrac3,
+	           const grid* Fpsi0,
+			   const grid* Fpsi1,
+	           const grid* Fpsi2,
+	           const grid* Fpsi3,
 			   const Basin *b)
 {
 	canopy = AccountStorages(Canopy, b);
@@ -80,6 +84,10 @@ void Budget::TotalStorage( const grid *Canopy,
 	Ts1 = CalcBasinAve_Ts_eff_by_lc(CanopyTemp1, Tskin1, LAI1, VegetFrac1, b);
 	Ts2 = CalcBasinAve_Ts_eff_by_lc(CanopyTemp2, Tskin2, LAI2, VegetFrac2, b);
 	Ts3 = CalcBasinAve_Ts_eff_by_lc(CanopyTemp3, Tskin3, LAI3, VegetFrac3, b);
+	Fpsi0_out = AccountTrckStorages2(VegetFrac0, Fpsi0, b);
+	Fpsi1_out = AccountTrckStorages2(VegetFrac1, Fpsi1,  b);
+	Fpsi2_out = AccountTrckStorages2(VegetFrac2, Fpsi2, b);
+	Fpsi3_out = AccountTrckStorages2(VegetFrac3, Fpsi3, b);
 }
 
 void Budget::TotalStorage_d2H( const grid *Canopy, const grid *Canopy_d2H,

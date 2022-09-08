@@ -174,9 +174,14 @@ int Report2Screen(){
     }
 	
     ofSummary << "\t" << oBudget->Ts0 << "\t";
-	ofSummary << oBudget->Ts1 << "\t";
-	ofSummary << oBudget->Ts2 << "\t";
-	ofSummary << oBudget->Ts3;// << "\t";
+    ofSummary << oBudget->Ts1 << "\t";
+    ofSummary << oBudget->Ts2 << "\t";
+    ofSummary << oBudget->Ts3 << "\t";
+
+    ofSummary << "\t" << oBudget->Fpsi0_out << "\t";
+	ofSummary << oBudget->Fpsi1_out << "\t";
+	ofSummary << oBudget->Fpsi2_out << "\t";
+	ofSummary << oBudget->Fpsi3_out;// << "\t";
   
   ofSummary << "\n";
 

@@ -71,6 +71,10 @@ int CalculateBudgets(){
 			oBasin->getVegetFrac(1),
 			oBasin->getVegetFrac(2),
 			oBasin->getVegetFrac(3),
+            oBasin->get_gc_f_psi(0),
+            oBasin->get_gc_f_psi(1),
+            oBasin->get_gc_f_psi(2),
+            oBasin->get_gc_f_psi(3),
 			oBasin);
   oBudget->TotalSrftoChn(oBasin->getFluxSrftoChn(), oBasin);
   oBudget->TotalGWtoChn(oBasin->getFluxGWtoChn(), oBasin);

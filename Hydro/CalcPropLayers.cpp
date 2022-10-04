@@ -174,6 +174,10 @@ int Basin::CalcFieldCapacity(Control &ctrl){
 	      powl(_psi_aeL3->matrix[r][c] / 3.36 ,1/_BClambdaL3->matrix[r][c])
 	      * (_porosityL3->matrix[r][c] - _theta_rL3->matrix[r][c])
 	      + _theta_rL3->matrix[r][c];
+		  
+		  _soilmoist1->matrix[r][c] = _fieldcapL1->matrix[r][c];
+		  _soilmoist2->matrix[r][c] = _fieldcapL2->matrix[r][c];
+		  _soilmoist3->matrix[r][c] = _fieldcapL3->matrix[r][c];
 
 	  } // for
 		

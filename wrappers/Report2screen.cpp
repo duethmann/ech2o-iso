@@ -178,7 +178,7 @@ int Report2Screen(){
     ofSummary << oBudget->Ts2 << "\t";
     ofSummary << oBudget->Ts3 << "\t";
 
-    ofSummary << "\t" << oBudget->Fpsi0_out << "\t";
+    ofSummary << oBudget->Fpsi0_out << "\t";
 	ofSummary << oBudget->Fpsi1_out << "\t";
 	ofSummary << oBudget->Fpsi2_out << "\t";
 	ofSummary << oBudget->Fpsi3_out;// << "\t";

@@ -416,8 +416,8 @@ if (oControl->Rep_TranspiL3acc)
     }
 	
     if (oControl->Rep_gc_factor_soil_moisture) {
-      name << "gc_f_psi" << i << "_";
-      WriteMapSeries(oBasin->getCanopyCond(i), name.str() , oControl->current_ts_count);
+      name << "gcfp" << i << "_";
+      WriteMapSeries(oBasin->get_gc_f_psi(i), name.str() , oControl->current_ts_count);
       name.str("");
     }
 

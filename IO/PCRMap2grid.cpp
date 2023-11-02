@@ -53,6 +53,8 @@ int grid::PCRMap2grid(std::string fname)
 	if((RgetNrCols(pcrMap)!= c)||(RgetNrRows(pcrMap)!= r))
 	{
 		cout << "PCRaster map " << fname << " has different dimensions than the grid";
+        cout << "rows  " << RgetNrRows(pcrMap) << " r" << r;
+        cout << "PCRaster map " << RgetNrCols(pcrMap) << " c" << c;
 		exit(-1);
 	}
 

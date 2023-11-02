@@ -64,7 +64,9 @@ Basin::Basin(Control &ctrl)
        * to the ldd after _DEM and _ldd have been created*/
       _vSortedGrid = Basin::SortGridLDD();
 
-      printf("Sorting done. Saving serialized sorted grid object for subsequent runs...\n");
+      cout <<"Rows " << _NRows <<" , columns"<<_NCols <<"\n";
+	  printf("Sorting done. Saving serialized sorted grid object for subsequent runs...\n");
+
       saveSortedGrid(_vSortedGrid, (ctrl.path_BasinFolder + ctrl.fn_dem + ".serialized.svf").c_str());
     }
 
